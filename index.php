@@ -1,13 +1,15 @@
 <?php
-   require('modeleUtilisateur.php');
+   // Routeur
+   require('controller/controller.php');
 
-   $requete = getUtilisateurs();
-
-   // Affichage
-   require('vueAcceuil.php');
-
-
-   /* 
-      - AVIS (contenu, date de création, note / 5)
-   
-   */ 
+   if(isset($_GET['page'])) {
+      if($_GET['page'] == 'acceuil') {
+         home();
+      }
+      else if($_GET['page'] == 'avis') {
+         testimonials();
+      }
+   }
+   else {
+      home();
+   }
