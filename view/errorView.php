@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <title>Vive le MVC</title>
-      <link rel="stylesheet" href="public/design/default.css">
-   </head>
+<?php 
+   $title = "Acceuil";
 
-   <body>
-      
-      <header>
-         <span>MVC</span>
-      </header>
+   ob_start();
+?>
+<section class="container">
 
-      <section class="container">
+   <h1>OUPS !</h1>
+   <p><?= $error ?></p>
+</section>
 
-         <h1>OUPS !</h1>
-         <p><?= $error ?></p>
+<?php 
+   $content = ob_get_clean();
+
+   require('base.php');
 
 
-      </section>
-
-   </body>
-</html>
