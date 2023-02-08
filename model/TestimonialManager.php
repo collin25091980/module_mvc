@@ -9,4 +9,11 @@
          return $requete;
       }
 
+      public function postTestimonial($note, $message) {
+         $bdd = $this->connection();
+         $requete = $bdd->prepare('INSERT INTO testimonials(note, content) VALUES(?, ?)');
+         $result = $requete->execute([$note, $message]);
+         
+         return $result;
+      }
    }

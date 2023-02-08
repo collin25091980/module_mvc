@@ -8,7 +8,13 @@
             home();
          }
          else if($_GET['page'] == 'avis') {
-            testimonials();
+
+            if(isset($_POST['note']) && !empty($_POST['message'])) {
+               addTestimonials(htmlspecialchars($_POST['note']), htmlspecialchars($_POST['message']));
+            }
+            else {
+               testimonials();
+            }
          }
          else {
             throw new Exception("Cette page n'existe pas ou a été supprimée.");
