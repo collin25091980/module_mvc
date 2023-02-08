@@ -1,7 +1,9 @@
 <?php
+   namespace MVC\User;
+   
    require_once('Manager.php');
 
-   class UserManager extends Manager {
+   class UserManager extends \MVC\Manager\Manager {
 
       public function getUsers() {
          $bdd = $this->connection();

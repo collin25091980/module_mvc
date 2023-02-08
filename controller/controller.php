@@ -5,19 +5,19 @@
 
 
    function home() {
-      $userManager = new UserManager();
+      $userManager = new \MVC\User\UserManager();
       $requete = $userManager->getUsers();
       require('view/listUserView.php');
    }
 
    function testimonials() {
-      $testimonialManager = new TestimonialsManager();
+      $testimonialManager = new \MVC\Testimonials\TestimonialsManager();
       $requete = $testimonialManager->getTestimonials();
       require('view/listTestimonialsView.php');
    }
 
    function addTestimonials($note, $message) {
-      $testimonialManager = new TestimonialsManager();
+      $testimonialManager = new \MVC\Testimonials\TestimonialsManager();
       $result = $testimonialManager->postTestimonial($note, $message);
       if($result === false) {
          throw new Exception("Impossible d'ajouter votre avis pour le moment");

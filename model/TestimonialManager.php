@@ -1,7 +1,9 @@
 <?php
+   namespace MVC\Testimonials;
+
    require_once('Manager.php');
 
-   class TestimonialsManager extends Manager  {
+   class TestimonialsManager extends \MVC\Manager\Manager  {
       
       public function getTestimonials() {
          $bdd = $this->connection();
